@@ -10,7 +10,10 @@
 		"cors": "^2.8.5",
 		"express": "^5.1.0",
 		"mathjax": "^3.2.2",
-		"preact": "^10.25.3"
+		"passport": "^0.7.0",
+		"passport-local": "^1.0.0",
+		"preact": "^10.25.3",
+		"preact-router": "^4.1.2"
 	},
 	"devDependencies": {
 		"@preact/preset-vite": "^2.9.3",

@@ -2,11 +2,20 @@ import express from "express";
 import cors from "cors";
 import path from "node:path";
 import fs from "node:fs";
+import passport from "passport";
+import { Strategy } from "passport-local";
+
 const __dirname = import.meta.dirname;
 
-
 const app = express();
-app.use(cors());
+
+// cors is painful
+app.use(
+  cors({
+    origin: "http://localhost:5173", // frontend origin
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
@@ -25,6 +34,25 @@ app.get("/api/questions", (req, res) => {
   });
 });
 
+app.post("/api/auth/login", (req, res) => {
+  // Simulate a login response
+  const { email } = req.body;
+  if (email) {
+    res.json({ message: `Welcome back, ${email}!` });
+  } else {
+    res.status(400).json({ error: "Email is required" });
+  }
+});
+
+app.post("/api/auth/register", (req, res) => {
+  // Simulate a registration response
+  const { email } = req.body;
+  if (email) {
+    res.json({ message: `User ${email} registered successfully!` });
+  } else {
+    res.status(400).json({ error: "Email is required" });
+  }
+});
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {

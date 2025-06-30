@@ -1,69 +1,69 @@
 :root {
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-	line-height: 1.5;
-	font-weight: 400;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
 
-	color: #222;
-	background-color: #ffffff;
+  color: #222;
+  background-color: #ffffff;
 
-	font-synthesis: none;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-text-size-adjust: 100%;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-	margin: 0;
-	display: flex;
-	align-items: center;
-	min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
 }
 
 #app {
-	max-width: 1280px;
-	margin: 0 auto;
-	text-align: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 img {
-	margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 img:hover {
-	filter: drop-shadow(0 0 2em #673ab8aa);
+  filter: drop-shadow(0 0 2em #673ab8aa);
 }
 
 section {
-	background: #fff;
-	padding: 2rem 2.5rem;
-	border-radius: 1rem;
-	box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-	min-width: 320px;
-	max-width: 90vw;
-	margin-top: 5rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  min-width: 320px;
+  max-width: 90vw;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .resource:hover {
-	border: 1px solid #000;
-	box-shadow: 0 25px 50px -12px #673ab888;
+  border: 1px solid #000;
+  box-shadow: 0 25px 50px -12px #673ab888;
 }
 
 .app-container {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	font-family: 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 h1 {
-	margin-bottom: 2rem;
-	color: #2d3748;
+  margin-bottom: 2rem;
+  color: #2d3748;
 }
 
 .results-list {
@@ -79,7 +79,7 @@ h1 {
   background: #f1f5f9;
   padding: 1rem;
   border-radius: 0.5rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
 .questions-list {
@@ -94,50 +94,64 @@ h1 {
 }
 
 .questions-list li {
+  width: 100%;
   background: #f8fafc;
   padding: 1rem;
   border-radius: 0.5rem;
 }
 
+input {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+}
+
+/* TODO: use material design? */
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
 @media (max-width: 639px) {
-	#app {
-		margin: 2rem;
-	}
-	section {
-		margin-top: 5rem;
-		grid-template-columns: 1fr;
-		row-gap: 1rem;
-	}
+  #app {
+    margin: 2rem;
+  }
+  section {
+    margin-top: 5rem;
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-	:root {
-		color: #ccc;
-		background-color: #1a1a1a;
-	}
-	section {
-		background: #23272f;
-		box-shadow: 0 4px 24px rgba(0,0,0,0.2);
-	}
-	h1 {
-		color: #e2e8f0;
-	}
-	.results-list li {
-		background: #23272f;
-		color: #e2e8f0;
-	}
-	.questions-list li {
-		background: #23272f;
-		color: #e2e8f0;
-	}
-	input {
-		background: #181c22;
-		color: #e2e8f0;
-		border: 1px solid #444;
-	}
-	button {
-		background: #444;
-		color: #e2e8f0;
-		border: none;
-	}
+  :root {
+    color: #ccc;
+    background-color: #1a1a1a;
+  }
+  section {
+    background: #23272f;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  }
+  h1 {
+    color: #e2e8f0;
+  }
+  .results-list li {
+    background: #07142b;
+    color: #e2e8f0;
+  }
+  .questions-list li {
+    background: #07142b;
+    color: #e2e8f0;
+  }
+  input {
+    background: #181c22;
+    color: #e2e8f0;
+  }
+  button {
+    background: #444;
+    color: #e2e8f0;
+    border: none;
+  }
 }

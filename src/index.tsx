@@ -1,5 +1,5 @@
 import { render } from 'preact';
-import { Assessment } from './Assessment'; // <-- Import your Assessment component
+import { Assessment } from './Assessment'; 
 
 import './style.css';
 

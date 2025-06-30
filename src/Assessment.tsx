@@ -16,6 +16,13 @@ export function Assessment() {
       });
   }, []);
 
+  // MathJax typeset effect
+  useEffect(() => {
+    if (window.MathJax) {
+      window.MathJax.typesetPromise();
+    }
+  }, [questions, results]);
+
   function handleInputChange(idx, value) {
     const newInputs = [...inputs];
     newInputs[idx] = value;
@@ -41,7 +48,11 @@ export function Assessment() {
         <ul className="results-list">
           {results.map((r, i) => (
             <li key={i}>
-              {r.text} — Your answer: {r.userAnswer} ({r.userAnswer === r.answer ? "Correct" : "Incorrect"})
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: r["text-tex"] ? r["text-tex"] : r.text
+                }}
+              /> — Your answer: {r.userAnswer} ({r.userAnswer === r.answer ? "Correct" : "Incorrect"})
             </li>
           ))}
         </ul>
@@ -54,8 +65,16 @@ export function Assessment() {
       <ul className="questions-list">
         {questions.map((q, idx) => (
           <li key={q.id || idx}>
-            <p>{q.text}</p>
+            <p>
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: q["text-tex"] ? q["text-tex"] : q.text
+                }}
+              />
+            </p>
             <input
+			  type="text"
+			  id={`question-${idx}`}
               value={inputs[idx] || ''}
               onInput={e => handleInputChange(idx, e.target.value)}
             />

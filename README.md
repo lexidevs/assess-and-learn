@@ -1,15 +1,16 @@
-# `create-preact`
+# Assess and Learn
 
-<h2 align="center">
-  <img height="256" width="256" src="./src/assets/preact.svg">
-</h2>
+> [!WARNING]
+> This project is still very much in development. It is not ready for production use.
 
-<h3 align="center">Get started using Preact and Vite!</h3>
+An LMS and learning platform that helps teach students what they don't already know.
 
-## Getting Started
+Built on Preact and Express.js. Authentication handled by passport!
 
--   `npm run dev` - Starts a dev server at http://localhost:5173/
+### LLM Disclosure
 
--   `npm run build` - Builds for production, emitting to `dist/`
+Large language models, in particular models served through GitHub Copilot, were used to create some limited portions of the initial code for this project. All code written by LLMs has been reviewed in detail by humans, and probably rewritten. 
 
--   `npm run preview` - Starts a server at http://localhost:4173/ to test production build locally
+Similarly, GitHub Copilot has been used to draft commit messages for some commits. 
+
+No image generation features have, or will be used in the creation of this project. All usage of generative "AI" will be disclosed.

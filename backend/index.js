@@ -130,6 +130,23 @@ app.get("/api/questions", (req, res) => {
   });
 });
 
+app.get("/api/course/:uuid", (req, res) => {
+	return res.json({
+		uuid: req.params.uuid,
+		name: "Foobar course",
+		description: "Lorem ipsum dolor sit amet",
+		contents: [
+			{
+				uuid: "fffffffff-ffff-ffff-ffff-ffff",
+				type: "assessment",
+				title: "Foo Assessment",
+				description: "test",
+			}
+		]
+	});
+});
+
+
 app.post("/api/auth/login", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     console.log(
